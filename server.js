@@ -1,19 +1,19 @@
 const express = require('express'); // Call the Express libs
 const mongoose =  require('mongoose');
-const app = express(); // Use a express
+const app = express(); // Use app as express
 
 
 // DB CONF
 const db = require('./config/keys').mongoURI;
 
 // Connect to MongoDB using Mongoose
-mongoose
+mongoose//libreria qeu nos ayuda a interactuar con nuestra base de datos
     .connect(db)
     .then(()=> console.log('mongo db connected'))
     .catch(err => console.log(err));
 
-app.get('/', (req, res) => res.send('hello!!!')); //router to a homepage
- 
+app.get('/', (req, res) => res.send('hello!!!  que hay')); //router to a homepage
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, ()=> console.log('Server running on port ', port));
